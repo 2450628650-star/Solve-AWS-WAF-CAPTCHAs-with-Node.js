@@ -2,7 +2,7 @@
 ## 1. Abstract
 AWS Web Application Firewall (WAF) is a critical security layer that often deploys Challenges (HTTP 202) or Managed Captchas (often HTTP 405) to protect web resources from automated threats. While these mechanisms are effective, they pose a significant barrier to legitimate automation tasks like web scraping, monitoring, and testing.
 
-This article provides a practical, technical guide focused on using the specialized service CapSolver with Node.js to programmatically bypass AWS WAF protections. We will detail the WAF’s mechanism, demonstrate how to extract the necessary parameters using cheerio, and provide a complete, runnable Node.js script that leverages CapSolver’s AntiAwsWafTask to obtain the required aws-waf-token cookie. The emphasis is on a production-grade solution that is technically sound and immediately applicable.
+This article provides a practical, technical guide focused on using the specialized service CapSolver with Node.js to programmatically bypass AWS WAF protections. We will detail the WAF’s mechanism, demonstrate how to extract the necessary parameters using cheerio, and provide a complete, runnable Node.js script that leverages [CapSolver](https://www.capsolver.com/?utm_source=github&utm_medium=blog&utm_campaign=aws&utm_term=OliviaB)’s AntiAwsWafTask to obtain the required aws-waf-token cookie. The emphasis is on a production-grade solution that is technically sound and immediately applicable.
 
 ## 2. Technical Analysis of the AWS WAF Challenge Mechanism
 The core function of the AWS WAF challenge is to execute a client-side proof-of-work to verify the client is a legitimate browser.
@@ -26,7 +26,7 @@ Our solution focuses on automating the extraction of these parameters and outsou
 Before you begin, ensure you have the following environment and information ready:
 
 • Node.js Environment: Node.js is installed on your system (LTS version recommended).
-• CapSolver API Key: You need a CapSolver account and your API key. Get your CapSolver API Key
+• [CapSolver](https://www.capsolver.com/?utm_source=github&utm_medium=blog&utm_campaign=aws&utm_term=OliviaB) API Key: You need a CapSolver account and your API key. Get your CapSolver API Key
 • Proxy (Optional): If the target website has geo-restrictions or you need to hide your real IP, prepare an HTTP/HTTPS proxy.
 ### 3.2 Step One: Install Necessary Dependencies
 In your project directory, execute the following command to install the required Node.js modules:
@@ -293,4 +293,4 @@ main();
 
 
 ## 4. Conclusion
-This guide has demonstrated a robust and efficient method for programmatically solving AWS WAF Challenges and Captchas using Node.js and CapSolver. By implementing the modular script and leveraging CapSolver’s specialized task type, you can seamlessly integrate this solution into your automation workflows. The key to success lies in correctly identifying the WAF status code (202 or 405), extracting the necessary parameters, and using the resulting aws-waf-token cookie for subsequent requests. This approach ensures your automation tasks can reliably access content protected by AWS WAF.
+This guide has demonstrated a robust and efficient method for programmatically solving AWS WAF Challenges and Captchas using Node.js and [CapSolver](https://www.capsolver.com/?utm_source=github&utm_medium=blog&utm_campaign=aws&utm_term=OliviaB). By implementing the modular script and leveraging CapSolver’s specialized task type, you can seamlessly integrate this solution into your automation workflows. The key to success lies in correctly identifying the WAF status code (202 or 405), extracting the necessary parameters, and using the resulting aws-waf-token cookie for subsequent requests. This approach ensures your automation tasks can reliably access content protected by AWS WAF.
